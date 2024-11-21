@@ -47,9 +47,9 @@ namespace WinADOexemplo1
         private void btnConsultar_Click(object sender, EventArgs e)
         {
             //string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\ClubeDB.mdf;Integrated Security=True;Connect Timeout=30";
-            string connectionString = $"Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename={Application.StartupPath}\\ClubeDB.mdf;Integrated Security=True;Connect Timeout=30";
+            string connectionString = $"Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename={Application.StartupPath}\\NomeDaSuaBaseDeDados.mdf;Integrated Security=True;Connect Timeout=30";
             using (SqlConnection connection = new SqlConnection(connectionString))
-                
+
             {
                 try
                 {
@@ -98,7 +98,7 @@ namespace WinADOexemplo1
         }
 
         //pesquisa por nome
-        
+
 
         private void TsBtnPesquisar_Click_1(object sender, EventArgs e)
         {
@@ -163,5 +163,33 @@ namespace WinADOexemplo1
             Form6 form6 = new Form6();
             form6.ShowDialog();
         }
+
+
+
+
+        private void dataGridViewSocios_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //obter o id do sócio selecionado
+            int id = (int)dataGridViewSocios.Rows[e.RowIndex].Cells["ID"].Value;
+            if (id == 0)
+            {
+                MessageBox.Show("Selecione um sócio válido", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else
+            {
+                //criar uma nova instância do Form6 (formulário de detalhes do sócio)
+                MessageBox.Show($"ID do sócio selecionado: {id}");
+                Form6 form6 = new Form6(id);
+                form6.ShowDialog();
+            }
+        }
+
+        private void TsNtnNomeDesc_Click(object sender, EventArgs e)
+        {
+            //ordenar a datagridview por nome descendente
+            dataGridViewSocios.Sort(dataGridViewSocios.Columns["Nome"], ListSortDirection.Descending);
+        }
+
     }
 }

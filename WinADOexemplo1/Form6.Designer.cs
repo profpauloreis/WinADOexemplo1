@@ -325,12 +325,6 @@
 
         private System.Windows.Forms.Button BtnCancelar;
         private System.Windows.Forms.Button BtnGuardar;
-        private System.Windows.Forms.DateTimePicker DtpDataEntrada;
-        private System.Windows.Forms.DateTimePicker DtpDataNascimento;
-        private System.Windows.Forms.TextBox TxtID;
-        private System.Windows.Forms.TextBox TxtTelefone;
-        private System.Windows.Forms.TextBox TxtEmail;
-        private System.Windows.Forms.TextBox TxtNome;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
@@ -345,5 +339,11 @@
         private System.Windows.Forms.Button BtnEditar;
         private System.Windows.Forms.Button BtnEliminar;
         private System.Windows.Forms.Button BtnNovo;
+        public System.Windows.Forms.TextBox TxtNome;
+        public System.Windows.Forms.DateTimePicker DtpDataEntrada;
+        public System.Windows.Forms.DateTimePicker DtpDataNascimento;
+        public System.Windows.Forms.TextBox TxtID;
+        public System.Windows.Forms.TextBox TxtTelefone;
+        public System.Windows.Forms.TextBox TxtEmail;
     }
 }

@@ -13,25 +13,49 @@ namespace WinADOexemplo1
 {
     public partial class Form6 : Form
     {
-
         private SqlConnection connection;
         private SqlDataAdapter dataAdapter;
         private DataTable dataTable;
         private int posCurrente = 0;
         private bool emEditMode = false;
+
+        public int Id { get; set; }    //adicionamos para obter o ID
         public Form6()
         {
             InitializeComponent();
             InicializarDatabase();
         }
 
+        //adicionamos o novo contrutor
+        public Form6(int id)
+        {
+            Id = id;
+            InitializeComponent();
+            InicializarDatabase();
+        }
+
         private void InicializarDatabase()
         {
-            string connectionString = $"Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename={Application.StartupPath}\\ClubeDB.mdf;Integrated Security=True;Connect Timeout=30";
+            //string connectionString = $"Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename={Application.StartupPath}\\ClubeDB.mdf;Integrated Security=True;Connect Timeout=30";
+            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB; Initial Catalog=ClubeDB; Integrated Security=True;";
             connection = new SqlConnection(connectionString);
             dataAdapter = new SqlDataAdapter("SELECT * FROM Socios", connection);
             dataTable = new DataTable();
             dataAdapter.Fill(dataTable);
+
+            if (Id > 0) {
+                // Aqui vamos usar o ID para obter o registo na tabela de dados
+                int position = ObterPosicaoPorId(Id);
+                if (position != -1)
+                {
+                    ExibirDados(position);
+                }
+                else
+                {
+                    MessageBox.Show("Registo não encontrado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            else
 
             if (dataTable.Rows.Count > 0)
             {
@@ -39,6 +63,17 @@ namespace WinADOexemplo1
             }
         }
 
+        private int ObterPosicaoPorId(int id)
+        {
+            for (int i = 0; i < dataTable.Rows.Count; i++)
+            {
+                if (Convert.ToInt32(dataTable.Rows[i]["ID"]) == id)
+                {
+                    return i; // Retorna a posição
+                }
+            }
+            return -1; // Retorna -1 se não encontrado
+        }
 
         private void ExibirDados(int position)
         {
@@ -137,9 +172,6 @@ namespace WinADOexemplo1
                 MessageBox.Show("Sócio atualizado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-
-
-
 
         private void InserirRegisto()
         {
@@ -256,6 +288,7 @@ namespace WinADOexemplo1
             BtnProximo.Enabled = enabled;
             BtnUltimo.Enabled = enabled;
         }
+
     }
    
 }

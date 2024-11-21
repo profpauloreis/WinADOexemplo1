@@ -38,21 +38,21 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.fecharToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.btnConsultar = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
-            this.TsPesquisar = new System.Windows.Forms.ToolStripTextBox();
-            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.dataGridViewSocios = new System.Windows.Forms.DataGridView();
-            this.btnConsultar = new System.Windows.Forms.ToolStripButton();
             this.TsBtnNrAsc = new System.Windows.Forms.ToolStripButton();
             this.TsBtnNrDesc = new System.Windows.Forms.ToolStripButton();
             this.TsNtnNomeAsc = new System.Windows.Forms.ToolStripButton();
             this.TsNtnNomeDesc = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
+            this.TsPesquisar = new System.Windows.Forms.ToolStripTextBox();
             this.TsBtnPesquisar = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.TsBtnNovo = new System.Windows.Forms.ToolStripButton();
             this.TsBtnGerir = new System.Windows.Forms.ToolStripButton();
+            this.dataGridViewSocios = new System.Windows.Forms.DataGridView();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSocios)).BeginInit();
@@ -151,6 +151,17 @@
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
+            // btnConsultar
+            // 
+            this.btnConsultar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnConsultar.Image = global::WinADOexemplo1.Properties.Resources.Fatcow_Farm_Fresh_Database_refresh_32;
+            this.btnConsultar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnConsultar.Name = "btnConsultar";
+            this.btnConsultar.Size = new System.Drawing.Size(36, 36);
+            this.btnConsultar.Text = "toolStripButton1";
+            this.btnConsultar.ToolTipText = "Atualizar";
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
+            // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
@@ -162,53 +173,6 @@
             this.toolStripLabel1.Name = "toolStripLabel1";
             this.toolStripLabel1.Size = new System.Drawing.Size(77, 36);
             this.toolStripLabel1.Text = "Ordenar:";
-            // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 39);
-            // 
-            // toolStripLabel2
-            // 
-            this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(97, 36);
-            this.toolStripLabel2.Text = "Pesquisar:";
-            // 
-            // TsPesquisar
-            // 
-            this.TsPesquisar.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.TsPesquisar.Name = "TsPesquisar";
-            this.TsPesquisar.Size = new System.Drawing.Size(200, 39);
-            // 
-            // toolStripSeparator5
-            // 
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 39);
-            // 
-            // dataGridViewSocios
-            // 
-            this.dataGridViewSocios.AllowUserToAddRows = false;
-            this.dataGridViewSocios.AllowUserToDeleteRows = false;
-            this.dataGridViewSocios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewSocios.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridViewSocios.Location = new System.Drawing.Point(0, 75);
-            this.dataGridViewSocios.Name = "dataGridViewSocios";
-            this.dataGridViewSocios.ReadOnly = true;
-            this.dataGridViewSocios.RowHeadersWidth = 51;
-            this.dataGridViewSocios.RowTemplate.Height = 24;
-            this.dataGridViewSocios.Size = new System.Drawing.Size(1262, 576);
-            this.dataGridViewSocios.TabIndex = 3;
-            // 
-            // btnConsultar
-            // 
-            this.btnConsultar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnConsultar.Image = global::WinADOexemplo1.Properties.Resources.Fatcow_Farm_Fresh_Database_refresh_32;
-            this.btnConsultar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(36, 36);
-            this.btnConsultar.Text = "toolStripButton1";
-            this.btnConsultar.ToolTipText = "Atualizar";
-            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
             // TsBtnNrAsc
             // 
@@ -248,6 +212,24 @@
             this.TsNtnNomeDesc.Name = "TsNtnNomeDesc";
             this.TsNtnNomeDesc.Size = new System.Drawing.Size(36, 36);
             this.TsNtnNomeDesc.Text = "Nome descendente";
+            this.TsNtnNomeDesc.Click += new System.EventHandler(this.TsNtnNomeDesc_Click);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 39);
+            // 
+            // toolStripLabel2
+            // 
+            this.toolStripLabel2.Name = "toolStripLabel2";
+            this.toolStripLabel2.Size = new System.Drawing.Size(97, 36);
+            this.toolStripLabel2.Text = "Pesquisar:";
+            // 
+            // TsPesquisar
+            // 
+            this.TsPesquisar.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.TsPesquisar.Name = "TsPesquisar";
+            this.TsPesquisar.Size = new System.Drawing.Size(200, 39);
             // 
             // TsBtnPesquisar
             // 
@@ -257,6 +239,11 @@
             this.TsBtnPesquisar.Name = "TsBtnPesquisar";
             this.TsBtnPesquisar.Size = new System.Drawing.Size(36, 36);
             this.TsBtnPesquisar.Click += new System.EventHandler(this.TsBtnPesquisar_Click_1);
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 39);
             // 
             // TsBtnNovo
             // 
@@ -277,6 +264,21 @@
             this.TsBtnGerir.Size = new System.Drawing.Size(36, 36);
             this.TsBtnGerir.Text = "Exibir registo individual de sócios";
             this.TsBtnGerir.Click += new System.EventHandler(this.TsBtnGerir_Click);
+            // 
+            // dataGridViewSocios
+            // 
+            this.dataGridViewSocios.AllowUserToAddRows = false;
+            this.dataGridViewSocios.AllowUserToDeleteRows = false;
+            this.dataGridViewSocios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewSocios.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewSocios.Location = new System.Drawing.Point(0, 75);
+            this.dataGridViewSocios.Name = "dataGridViewSocios";
+            this.dataGridViewSocios.ReadOnly = true;
+            this.dataGridViewSocios.RowHeadersWidth = 51;
+            this.dataGridViewSocios.RowTemplate.Height = 24;
+            this.dataGridViewSocios.Size = new System.Drawing.Size(1262, 576);
+            this.dataGridViewSocios.TabIndex = 3;
+            this.dataGridViewSocios.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewSocios_CellDoubleClick);
             // 
             // Form3
             // 
